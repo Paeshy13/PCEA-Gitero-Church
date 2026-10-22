@@ -63,7 +63,8 @@ const districts = [
 function LogoBadge({ variant = 'pcea', label = 'PCEA', short = 'PCEA' }) {
   return (
     <div className={`group-logo group-logo--${variant}`} aria-label={`${label} logo`} title={label}>
-      <span>{short}</span>
+      <span className="group-logo-crest" aria-hidden="true" />
+      <span className="group-logo-text">{short}</span>
     </div>
   );
 }
@@ -271,7 +272,9 @@ function App() {
 
           <div className="hero-art" aria-label="PCEA crest illustration">
             <div className="crest-mark crest-mark--pcea">
-              <span>PCEA</span>
+              <span className="crest-fire" aria-hidden="true" />
+              <span className="crest-cross" aria-hidden="true" />
+              <span className="crest-word">PCEA</span>
               <small>Faith • Hope • Love</small>
             </div>
           </div>
