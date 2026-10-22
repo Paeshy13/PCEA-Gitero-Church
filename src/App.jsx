@@ -36,7 +36,7 @@ const ministries = [
     tab: 'Youth Fellowship',
     who: 'For young people aged 15 to 35',
     vision: 'A vibrant and well-coordinated youth movement in East Africa and beyond.',
-    mission: 'To bring young people into fellowship, discipleship, and evangelism; to raise and equip emerging leaders for Church and society; and to empower young people physically, economically, socially, and spiritually.',
+    mission: 'To bring young people into fellowship, discipleship, and evangelism; to raise and equip emerging leaders for Church and society; and to empower young people physically, economically, and spiritually.',
     motto: 'Love, Unity, and Service.',
     vals: ['Bible and Christ-centered service', 'Democratic participation and inclusiveness', 'Teamwork and networking', 'Discipline and integrity'],
     about: 'Young people who yearn to serve the Lord in truth and spirit.',
@@ -46,7 +46,7 @@ const ministries = [
     tab: 'Boys’ and Girls’ Brigade',
     who: 'For teens growing in Christ',
     vision: 'To be a Christian youth organization with a difference, raising disciplined, faithful, and community-minded people who reflect Christ’s character at home, at school, and in the community.',
-    mission: 'To nurture youth into Christian leadership, service, and true followers of Christ by applying biblical values to daily life, and to train officers to lead through disciplined, Christ-centered engagement.',
+    mission: 'To nurture youth into Christian leadership, service, and true followers of Christ by applying biblical values to daily life, and to train officers to lead through disciplined, Christ-centered mentorship.',
     motto: 'Sure and Steadfast · Seek, Serve and Follow Christ',
     vals: ['Spiritual growth', 'Physical growth', 'Educational growth', 'Social growth', 'Religion', 'Discipline'],
     about: 'Aiming to be a Global Model Brigade with a four-square programme. Boys are guided toward discipline and Christian character; girls toward following Jesus with self-control and responsibility.',
@@ -60,9 +60,32 @@ const districts = [
   { name: 'Macedonia', leader: 'Elder John Njoroge' },
 ];
 
+function LogoBadge({ variant = 'pcea', label = 'PCEA', short = 'PCEA' }) {
+  return (
+    <div className={`group-logo group-logo--${variant}`} aria-label={`${label} logo`} title={label}>
+      <span>{short}</span>
+    </div>
+  );
+}
+
 function Ministries() {
   const [selectedId, setSelectedId] = useState('cs');
   const active = useMemo(() => ministries.find((item) => item.id === selectedId) ?? ministries[0], [selectedId]);
+
+  const badgeShort = (() => {
+    switch (active.id) {
+      case 'wg':
+        return 'WG';
+      case 'bb':
+        return 'B&G';
+      case 'pcmf':
+        return 'PCMF';
+      case 'yf':
+        return 'YF';
+      default:
+        return 'PCEA';
+    }
+  })();
 
   return (
     <section id="groups" className="section">
@@ -93,9 +116,7 @@ function Ministries() {
         <div className="group-panel" role="tabpanel" key={active.id}>
           <div className="group-copy">
             <div className="group-title-block">
-              <div className="group-badge" aria-hidden="true">
-                {active.tab.slice(0, 2).toUpperCase()}
-              </div>
+              <LogoBadge variant={active.id} label={active.tab} short={badgeShort} />
               <div>
                 <h3>{active.tab}</h3>
                 <p className="group-tag">{active.who}</p>
@@ -220,7 +241,10 @@ function App() {
     <>
       <nav className="topbar" aria-label="Main navigation">
         <div className="container nav-inner">
-          <div className="brand">PCEA Gitero</div>
+          <div className="brand">
+            <span className="brand-mark">P</span>
+            PCEA Gitero
+          </div>
           <div className="nav-links">
             <a href="#about">About</a>
             <a href="#services">Services</a>
@@ -246,7 +270,7 @@ function App() {
           </div>
 
           <div className="hero-art" aria-label="PCEA crest illustration">
-            <div className="crest-mark">
+            <div className="crest-mark crest-mark--pcea">
               <span>PCEA</span>
               <small>Faith • Hope • Love</small>
             </div>
