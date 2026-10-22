@@ -142,7 +142,7 @@ img { max-width: 100%; display: block; }
   display: grid;
   place-items: center;
   border-radius: 50%;
-  background: linear-gradient(135deg, #f9d35f, #f0a40f);
+  background: linear-gradient(135deg, #f8d95f, #f1b127);
   color: #1d1f62;
   font-size: 0.9rem;
   font-weight: 900;
@@ -244,9 +244,9 @@ img { max-width: 100%; display: block; }
   display: grid;
   place-items: center;
   border-radius: 50%;
-  background: radial-gradient(circle at center, #2d2b8a 0%, #2d2b8a 28%, #f1f4ff 29%, #f1f4ff 35%, #2d2b8a 36%, #2d2b8a 100%);
-  border: 8px solid #f2cf61;
-  box-shadow: 0 18px 40px rgba(12, 13, 35, 0.35), inset 0 0 0 4px rgba(255,255,255,0.18);
+  background: linear-gradient(180deg, #2a2c82 0%, #2a2c82 34%, #f0ece2 35%, #f0ece2 40%, #2a2c82 41%, #2a2c82 100%);
+  border: 8px solid #f3d56a;
+  box-shadow: 0 18px 40px rgba(12, 13, 35, 0.35), inset 0 0 0 4px rgba(255,255,255,0.16);
   position: relative;
   overflow: hidden;
   isolation: isolate;
@@ -262,17 +262,16 @@ img { max-width: 100%; display: block; }
 }
 
 .crest-mark::before {
-  inset: 5% 5% 12%;
-  background: radial-gradient(circle at center, rgba(255,255,255,0.65), rgba(255,255,255,0.22) 54%, transparent 55%);
-  opacity: 0.7;
+  inset: 8% 9% 15% 9%;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.24), rgba(255,255,255,0.08) 56%, transparent 57%);
 }
 
 .crest-mark::after {
   inset: auto 8% 7% 8%;
-  height: 18%;
+  height: 20%;
   border-radius: 0 0 46% 46%;
-  background: linear-gradient(180deg, rgba(255,255,255,0.35), rgba(255,255,255,0.04));
-  transform: translateY(24%);
+  background: linear-gradient(180deg, rgba(255,255,255,0.28), rgba(255,255,255,0.02));
+  transform: translateY(14%);
 }
 
 .crest-fire,
@@ -285,52 +284,52 @@ img { max-width: 100%; display: block; }
 }
 
 .crest-fire {
-  width: 90%;
-  height: 90%;
-  left: 5%;
-  top: -10%;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
   background:
-    radial-gradient(circle at 50% 80%, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0) 20%),
-    radial-gradient(circle at 50% 15%, rgba(255,233,123,0.9) 0%, rgba(255,212,65,0.8) 18%, rgba(255,81,35,0.7) 33%, rgba(255,0,0,0.08) 60%, transparent 61%);
-  clip-path: polygon(50% 0%, 62% 18%, 72% 8%, 82% 25%, 92% 16%, 100% 38%, 81% 44%, 87% 58%, 70% 61%, 79% 82%, 60% 70%, 50% 100%, 39% 70%, 20% 82%, 30% 61%, 12% 58%, 19% 44%, 0% 38%, 8% 16%, 19% 24%, 28% 8%, 38% 18%);
-  filter: drop-shadow(0 0 18px rgba(255, 170, 0, 0.7));
-  opacity: 0.95;
+    radial-gradient(circle at 50% 72%, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0) 18%),
+    radial-gradient(circle at 50% 14%, rgba(255,241,160,0.9) 0%, rgba(255,235,115,0.88) 16%, rgba(255,145,0,0.8) 32%, rgba(255,40,0,0.72) 55%, rgba(255,0,0,0.06) 62%, transparent 63%);
+  clip-path: polygon(50% 0%, 62% 16%, 74% 7%, 84% 23%, 96% 16%, 100% 40%, 84% 46%, 90% 58%, 70% 64%, 78% 82%, 58% 70%, 50% 100%, 41% 70%, 22% 82%, 30% 64%, 10% 58%, 16% 46%, 0% 40%, 4% 16%, 16% 23%, 26% 7%, 38% 16%);
+  filter: drop-shadow(0 0 18px rgba(255, 180, 0, 0.85));
+  opacity: 1;
 }
 
 .crest-fire::before,
 .crest-fire::after {
-  width: 76%;
-  height: 76%;
-  left: 12%;
-  top: 12%;
-  background: radial-gradient(circle at 50% 20%, rgba(255,243,160,0.9), rgba(255,201,74,0.86) 18%, rgba(255,81,35,0.8) 38%, rgba(255,0,0,0.1) 60%, transparent 62%);
-  clip-path: polygon(50% 0%, 64% 16%, 76% 8%, 86% 28%, 100% 36%, 82% 46%, 88% 62%, 68% 68%, 76% 100%, 50% 80%, 24% 100%, 32% 68%, 12% 62%, 18% 46%, 0% 36%, 14% 28%, 24% 8%, 36% 16%);
+  width: 80%;
+  height: 80%;
+  left: 10%;
+  top: 10%;
+  background: radial-gradient(circle at 50% 20%, rgba(255,246,170,0.94), rgba(255,205,71,0.86) 16%, rgba(255,118,34,0.78) 38%, rgba(255,0,0,0.1) 60%, transparent 62%);
+  clip-path: polygon(50% 0%, 64% 18%, 74% 10%, 86% 28%, 100% 36%, 82% 48%, 88% 62%, 70% 68%, 76% 100%, 50% 82%, 24% 100%, 30% 68%, 12% 62%, 18% 48%, 0% 36%, 14% 28%, 26% 10%, 36% 18%);
 }
 
 .crest-fire::after {
   width: 58%;
   height: 58%;
   left: 21%;
-  top: 23%;
-  background: radial-gradient(circle at 50% 20%, rgba(255,255,150,0.95), rgba(255,227,90,0.88) 22%, rgba(255,116,40,0.85) 52%, rgba(255,81,35,0.15) 70%, transparent 72%);
+  top: 22%;
+  background: radial-gradient(circle at 50% 20%, rgba(255,255,170,1), rgba(255,220,80,0.9) 22%, rgba(255,118,34,0.8) 52%, rgba(255,81,35,0.2) 72%, transparent 73%);
 }
 
 .crest-cross {
   position: absolute;
-  width: 32%;
-  height: 52%;
-  border-radius: 20px;
-  background: linear-gradient(180deg, #ffffff 0%, #eef2ff 100%);
-  box-shadow: inset 0 0 0 4px rgba(16, 30, 88, 0.12);
+  width: 28%;
+  height: 48%;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #ffffff 0%, #eef3ff 100%);
   z-index: 2;
+  box-shadow: inset 0 0 0 4px rgba(17, 28, 82, 0.12);
 }
 
 .crest-cross::before,
 .crest-cross::after {
   content: "";
   position: absolute;
-  background: linear-gradient(180deg, #ef2435 0%, #c70d22 100%);
-  border-radius: 12px;
+  background: linear-gradient(180deg, #eb1d2a 0%, #be0d1b 100%);
+  border-radius: 10px;
 }
 
 .crest-cross::before {
@@ -356,7 +355,7 @@ img { max-width: 100%; display: block; }
   font-size: clamp(2.1rem, 4vw, 3.2rem);
   font-family: 'Bitter', serif;
   font-weight: 800;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.07em;
   color: #ffffff;
   text-shadow: 0 2px 0 rgba(33, 35, 95, 0.25);
 }
@@ -364,26 +363,26 @@ img { max-width: 100%; display: block; }
 .crest-mark small {
   position: absolute;
   left: 50%;
-  bottom: 10%;
+  bottom: 8%;
   transform: translateX(-50%);
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.85);
+  color: rgba(255,255,255,0.9);
   z-index: 3;
 }
 
 .group-logo {
-  width: 4.4rem;
-  height: 4.4rem;
+  width: 4.15rem;
+  height: 4.15rem;
   display: grid;
   place-items: center;
   border-radius: 50%;
   position: relative;
   overflow: hidden;
   flex-shrink: 0;
-  background: radial-gradient(circle at center, #2d2b8a 0%, #2d2b8a 36%, #f5f3ec 37%, #f5f3ec 42%, #2d2b8a 43%, #2d2b8a 100%);
-  border: 5px solid #f0d76c;
+  background: linear-gradient(180deg, #2a2c82 0%, #2a2c82 34%, #efece1 35%, #efece1 40%, #2a2c82 41%, #2a2c82 100%);
+  border: 5px solid #f0d46a;
   box-shadow: inset 0 0 0 2px rgba(255,255,255,0.18);
 }
 
@@ -391,14 +390,14 @@ img { max-width: 100%; display: block; }
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), transparent 40%, rgba(255,255,255,0.12));
+  background: linear-gradient(135deg, rgba(255,255,255,0.06), transparent 42%, rgba(255,255,255,0.12));
 }
 
 .group-logo-crest {
   position: absolute;
-  inset: 18% 18% 22% 18%;
+  inset: 23% 22% 28% 22%;
   border-radius: 50%;
-  background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(221,226,252,0.82));
+  background: linear-gradient(180deg, rgba(255,255,255,0.94), rgba(228,230,249,0.82));
   box-shadow: inset 0 0 0 3px rgba(28, 36, 114, 0.14);
 }
 
@@ -406,28 +405,28 @@ img { max-width: 100%; display: block; }
 .group-logo-crest::after {
   content: "";
   position: absolute;
-  background: linear-gradient(180deg, #ef2435 0%, #ca101e 100%);
+  background: linear-gradient(180deg, #eb1d2a 0%, #ca101e 100%);
   border-radius: 10px;
 }
 
 .group-logo-crest::before {
-  width: 22%;
-  height: 70%;
-  left: 39%;
+  width: 20%;
+  height: 68%;
+  left: 40%;
   top: 15%;
 }
 
 .group-logo-crest::after {
-  width: 70%;
-  height: 22%;
-  left: 15%;
-  top: 39%;
+  width: 68%;
+  height: 20%;
+  left: 16%;
+  top: 40%;
 }
 
 .group-logo-text {
   position: relative;
   z-index: 1;
-  font-size: 0.76rem;
+  font-size: 0.72rem;
   font-family: 'Bitter', serif;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -435,20 +434,12 @@ img { max-width: 100%; display: block; }
   text-shadow: 0 2px 0 rgba(33, 35, 95, 0.15);
 }
 
-.group-logo--wg .group-logo-crest,
-.group-logo--yf .group-logo-crest,
-.group-logo--bb .group-logo-crest,
-.group-logo--pcmf .group-logo-crest,
-.group-logo--cs .group-logo-crest {
-  background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(230,235,255,0.9));
-}
-
 .group-logo--wg .group-logo-text,
 .group-logo--yf .group-logo-text,
 .group-logo--bb .group-logo-text,
 .group-logo--pcmf .group-logo-text,
 .group-logo--cs .group-logo-text {
-  font-size: 0.68rem;
+  font-size: 0.64rem;
 }
 
 .service-grid {
