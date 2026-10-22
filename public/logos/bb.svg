@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" role="img" aria-label="Boys and Girls Brigade logo">
+  <rect width="220" height="220" rx="36" fill="#FFF9E8"/>
+  <circle cx="110" cy="110" r="84" fill="#2D2A82"/>
+  <circle cx="110" cy="110" r="68" fill="#F3F0E8"/>
+  <path d="M110 38L123 66L148 58L138 88L164 92L138 108L149 138L122 124L110 150L98 124L71 138L82 108L56 92L82 88L72 58L97 66L110 38Z" fill="#F1C545"/>
+  <rect x="104" y="64" width="12" height="72" rx="6" fill="#FFF"/>
+  <rect x="72" y="96" width="76" height="12" rx="6" fill="#FFF"/>
+  <text x="110" y="178" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="800" fill="#2D2A82" letter-spacing="2">B&amp;G</text>
+</svg>
