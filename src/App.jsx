@@ -36,7 +36,7 @@ const ministries = [
     tab: 'Youth Fellowship',
     who: 'For young people aged 15 to 35',
     vision: 'A vibrant and well-coordinated youth movement in East Africa and beyond.',
-    mission: 'To bring young people into fellowship, discipleship, and evangelism; to raise and equip emerging leaders for Church and society; and to empower young people physically, economically, and spiritually.',
+    mission: 'To bring young people into fellowship, discipleship, and evangelism; to raise and equip emerging leaders for Church and society; and to empower young people physically, economically, and spiritually for service.',
     motto: 'Love, Unity, and Service.',
     vals: ['Bible and Christ-centered service', 'Democratic participation and inclusiveness', 'Teamwork and networking', 'Discipline and integrity'],
     about: 'Young people who yearn to serve the Lord in truth and spirit.',
@@ -60,11 +60,108 @@ const districts = [
   { name: 'Macedonia', leader: 'Elder John Njoroge' },
 ];
 
-function LogoBadge({ variant = 'pcea', label = 'PCEA', short = 'PCEA' }) {
+function PceaHeroMark() {
   return (
-    <div className={`group-logo group-logo--${variant}`} aria-label={`${label} logo`} title={label}>
-      <span className="group-logo-crest" aria-hidden="true" />
-      <span className="group-logo-text">{short}</span>
+    <svg className="crest-mark crest-mark--pcea" viewBox="0 0 360 360" role="img" aria-label="PCEA crest logo">
+      <defs>
+        <radialGradient id="crestGlow" cx="50%" cy="35%" r="60%">
+          <stop offset="0%" stopColor="#fff6c2" />
+          <stop offset="18%" stopColor="#f9ea79" />
+          <stop offset="38%" stopColor="#f9ba2c" />
+          <stop offset="60%" stopColor="#ee5b1d" />
+          <stop offset="100%" stopColor="#be0d1b" stopOpacity="0" />
+        </radialGradient>
+      </defs>
+
+      <g opacity="0.95">
+        <path d="M180 34L193 66L214 58L210 96L237 90L236 125L265 126L254 150L281 156L255 180L287 199L255 210L273 238L236 233L236 264L210 256L214 294L191 286L180 320L169 286L146 294L150 256L124 264L124 233L87 238L105 210L73 199L105 180L73 156L100 150L89 126L118 125L117 90L144 96L140 58L161 66L174 34Z" fill="url(#crestGlow)"/>
+        <path d="M180 46L190 70L206 63L207 90L229 88L227 112L249 115L240 138L267 147L244 168L263 186L237 196L247 222L220 217L218 244L197 234L180 262L163 234L142 244L140 217L113 222L123 196L97 186L116 168L93 147L120 138L111 115L133 112L131 88L153 90L154 63L170 70L180 46Z" fill="#f6d84d" opacity="0.9"/>
+      </g>
+
+      <circle cx="180" cy="180" r="124" fill="#2d3094" />
+      <circle cx="180" cy="180" r="103" fill="#e7e0d1" />
+      <circle cx="180" cy="180" r="85" fill="#2d3094" />
+
+      <rect x="170" y="88" width="20" height="158" rx="8" fill="#fff" />
+      <rect x="102" y="156" width="156" height="20" rx="8" fill="#fff" />
+      <rect x="138" y="181" width="84" height="10" rx="5" fill="#d7132d" opacity="0.9" />
+
+      <text x="180" y="118" textAnchor="middle" fill="#fff" fontSize="23" fontWeight="800" letterSpacing="4">PCEA</text>
+      <text x="180" y="245" textAnchor="middle" fill="#fff" fontSize="19" fontWeight="700" letterSpacing="2">FAITH • HOPE • LOVE</text>
+    </svg>
+  );
+}
+
+function LogoBadge({ variant = 'pcea', label = 'PCEA', short = 'PCEA' }) {
+  const shouldTextBelow = variant === 'wg' || variant === 'bb' || variant === 'cs';
+
+  const content = (() => {
+    switch (variant) {
+      case 'wg':
+        return (
+          <svg className={`group-logo group-logo--${variant}`} viewBox="0 0 160 160" role="img" aria-label={label}>
+            <circle cx="80" cy="80" r="72" fill="#efdf9d" />
+            <circle cx="80" cy="80" r="67" fill="#2f2a82" />
+            <circle cx="80" cy="80" r="54" fill="#f1edd9" />
+            <path d="M80 31L90 76L102 54L114 78L123 40L130 76L140 60L132 90L118 102L106 110L92 120L80 136L68 120L56 110L44 102L30 90L22 60L32 76L41 40L49 78L61 54L70 76Z" fill="#cf101d" opacity="0.9"/>
+            <rect x="75" y="46" width="10" height="56" rx="4" fill="#fff" />
+            <rect x="52" y="68" width="56" height="10" rx="4" fill="#fff" />
+            <text x="80" y="110" textAnchor="middle" fill="#1b2167" fontSize="10" fontWeight="800" letterSpacing="1.5">WOMAN'S</text>
+            <text x="80" y="122" textAnchor="middle" fill="#1b2167" fontSize="10" fontWeight="800" letterSpacing="1.5">GUILD</text>
+          </svg>
+        );
+      case 'bb':
+        return (
+          <svg className={`group-logo group-logo--${variant}`} viewBox="0 0 160 160" role="img" aria-label={label}>
+            <circle cx="80" cy="80" r="72" fill="#f2d96c" />
+            <circle cx="80" cy="80" r="66" fill="#2b2f8f" />
+            <circle cx="80" cy="80" r="52" fill="#eee8d8" />
+            <path d="M80 18L92 42L108 26L101 52L124 47L114 69L136 72L113 84L127 108L100 101L97 126L80 112L63 126L60 101L33 108L47 84L24 72L46 69L36 47L59 52L52 26L68 42Z" fill="#f7d347" opacity="0.9"/>
+            <rect x="75" y="46" width="10" height="60" rx="4" fill="#fff" />
+            <rect x="48" y="70" width="64" height="10" rx="4" fill="#fff" />
+            <text x="80" y="112" textAnchor="middle" fill="#1b2167" fontSize="10" fontWeight="800" letterSpacing="1.5">B&amp;G</text>
+          </svg>
+        );
+      case 'pcmf':
+        return (
+          <svg className={`group-logo group-logo--${variant}`} viewBox="0 0 160 160" role="img" aria-label={label}>
+            <circle cx="80" cy="80" r="72" fill="#2a2d82" />
+            <circle cx="80" cy="80" r="58" fill="#efe8d8" />
+            <path d="M80 25L90 54H110L96 68L103 96L80 82L57 96L64 68L50 54H70L80 25Z" fill="#d71b30" opacity="0.9"/>
+            <rect x="76" y="42" width="8" height="60" rx="4" fill="#fff" />
+            <rect x="52" y="66" width="56" height="8" rx="4" fill="#fff" />
+            <text x="80" y="112" textAnchor="middle" fill="#1b2167" fontSize="10" fontWeight="800" letterSpacing="1.5">PCMF</text>
+          </svg>
+        );
+      case 'yf':
+        return (
+          <svg className={`group-logo group-logo--${variant}`} viewBox="0 0 160 160" role="img" aria-label={label}>
+            <circle cx="80" cy="80" r="72" fill="#2f2a82" />
+            <circle cx="80" cy="80" r="58" fill="#efe9dc" />
+            <path d="M80 32L95 58H115L100 72L107 98L80 86L53 98L60 72L45 58H65L80 32Z" fill="#cf111c" opacity="0.9"/>
+            <rect x="76" y="44" width="8" height="60" rx="4" fill="#fff" />
+            <rect x="53" y="70" width="54" height="8" rx="4" fill="#fff" />
+            <text x="80" y="112" textAnchor="middle" fill="#1b2167" fontSize="10" fontWeight="800" letterSpacing="1.5">YF</text>
+          </svg>
+        );
+      default:
+        return (
+          <svg className={`group-logo group-logo--${variant}`} viewBox="0 0 160 160" role="img" aria-label={label}>
+            <circle cx="80" cy="80" r="72" fill="#2b2f8b" />
+            <circle cx="80" cy="80" r="60" fill="#e9e6d7" />
+            <path d="M80 24L92 62L122 54L102 80L122 106L92 98L80 136L68 98L38 106L58 80L38 54L68 62Z" fill="#f1d24d" opacity="0.92"/>
+            <rect x="76" y="42" width="8" height="60" rx="4" fill="#fff" />
+            <rect x="52" y="66" width="56" height="8" rx="4" fill="#fff" />
+            <text x="80" y="112" textAnchor="middle" fill="#1b2167" fontSize="10" fontWeight="800" letterSpacing="1.5">PCEA</text>
+          </svg>
+        );
+    }
+  })();
+
+  return (
+    <div className={`group-logo-wrap group-logo-wrap--${variant}`} aria-label={`${label} logo`} title={label}>
+      {content}
+      {shouldTextBelow ? <span className="group-logo-caption">{short}</span> : null}
     </div>
   );
 }
@@ -271,12 +368,7 @@ function App() {
           </div>
 
           <div className="hero-art" aria-label="PCEA crest illustration">
-            <div className="crest-mark crest-mark--pcea">
-              <span className="crest-fire" aria-hidden="true" />
-              <span className="crest-cross" aria-hidden="true" />
-              <span className="crest-word">PCEA</span>
-              <small>Faith • Hope • Love</small>
-            </div>
+            <PceaHeroMark />
           </div>
         </div>
       </header>
@@ -289,7 +381,7 @@ function App() {
               <h2>Welcome to PCEA Gitero Church</h2>
             </div>
             <p className="lead">
-              Gitero is one of the six congregations of the Nyeri Joy Parish. We are a community of families, women, men, young people, and teens learning to worship, serve, and follow Christ together.
+              Gitero is one of the six congregations of the Nyeri Joy Parish. We are a community of families, women, men, young people, and teens learning to worship, serve, and follow Christ together in faith, hope, and love.
             </p>
           </div>
         </section>
@@ -353,3 +445,4 @@ function App() {
 }
 
 export default App;
+
