@@ -39,7 +39,7 @@ const ministries = [
     tab: 'Youth Fellowship',
     who: 'For young people aged 15 to 35',
     vision: 'A vibrant and well-coordinated youth movement in East Africa and beyond.',
-    mission: 'To bring young people into fellowship, discipleship, and evangelism; to raise and equip emerging leaders for Church and society; and to empower young people physically, economically, and spiritually.',
+    mission: 'To bring young people into fellowship, discipleship, and evangelism; to raise and equip emerging leaders for Church and society; and to empower young people physically, economically, socially, and spiritually.',
     motto: 'Love, Unity, and Service.',
     vals: ['Bible and Christ-centered service', 'Democratic participation and inclusiveness', 'Teamwork and networking', 'Discipline and integrity'],
     about: 'Young people who yearn to serve the Lord in truth and spirit.',
@@ -50,7 +50,7 @@ const ministries = [
     tab: 'Boys’ and Girls’ Brigade',
     who: 'For teens growing in Christ',
     vision: 'To be a Christian youth organization with a difference, raising disciplined, faithful, and community-minded people who reflect Christ’s character at home, at school, and in the community.',
-    mission: 'To nurture youth into Christian leadership, service, and true followers of Christ by applying biblical values to daily life, and to train officers to lead through disciplined, Christ-centered mentorship.',
+    mission: 'To nurture youth into Christian leadership, service, and true followers of Christ by applying biblical values to daily life, and to train officers to lead through disciplined, Christ-centered discipleship.',
     motto: 'Sure and Steadfast · Seek, Serve and Follow Christ',
     vals: ['Spiritual growth', 'Physical growth', 'Educational growth', 'Social growth', 'Religion', 'Discipline'],
     about: 'Aiming to be a Global Model Brigade with a four-square programme. Boys are guided toward discipline and Christian character; girls toward following Jesus with self-control and responsibility.',
@@ -79,8 +79,8 @@ function PceaHeroMark() {
       </defs>
 
       <g opacity="0.95">
-        <path d="M180 34L193 66L214 58L210 96L237 90L236 125L265 126L254 150L281 156L255 180L287 199L255 210L273 238L236 233L236 264L210 256L214 294L191 286L180 320L169 286L146 294L150 256L124 264L123 233L97 238L115 210L83 199L117 180L89 156L116 150L105 126L134 125L133 90L160 96L156 58L177 66L180 34Z" fill="url(#crestGlow)" />
-        <path d="M180 46L190 70L206 63L207 90L229 88L227 112L249 115L240 138L267 147L244 168L263 186L237 196L247 222L220 217L218 244L197 234L180 262L163 234L142 244L140 217L113 222L123 196L97 186L116 168L93 147L120 138L111 115L133 112L131 88L153 90L154 63L170 70L180 46Z" fill="#f5d66a" opacity="0.95" />
+        <path d="M180 34L193 66L214 58L210 96L237 90L236 125L265 126L254 150L281 156L255 180L287 199L255 210L273 238L236 233L236 264L210 256L214 294L191 286L180 320L169 286L146 294L150 256L124 264L122 236L96 238L114 210L82 198L108 181L76 156L104 150L92 126L121 125L120 90L147 96L143 58L164 66L180 34Z" fill="url(#crestGlow)" opacity="0.45" />
+        <path d="M180 46L190 70L206 63L207 90L229 88L227 112L249 115L240 138L267 147L244 168L263 186L237 196L247 222L220 217L218 244L197 234L180 262L163 234L142 244L140 217L113 222L123 196L97 186L124 168L103 147L130 138L121 115L143 112L141 88L163 90L164 63L180 70L180 46Z" fill="#f2f2ee" opacity="0.72" />
       </g>
 
       <circle cx="180" cy="180" r="124" fill="#2d3094" />
@@ -341,6 +341,49 @@ function Districts() {
   );
 }
 
+function ChurchLocation() {
+  return (
+    <section id="location" className="section location-section">
+      <div className="container location-grid">
+        <div className="info-card map-card">
+          <div className="section-heading">
+            <p className="eyebrow">visit</p>
+            <h2>Find us</h2>
+          </div>
+          <p className="lead">PCEA Gitero Church is located in Gitero, Nyeri County, Kenya. Join us for worship, fellowship, and prayer.</p>
+          <a
+            className="map-link"
+            href="https://www.google.com/maps/search/?api=1&query=PCEA+Gitero+Church+Nyeri+Kenya"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Open in Google Maps
+          </a>
+        </div>
+
+        <div id="giving" className="info-card giving-card">
+          <div className="section-heading">
+            <p className="eyebrow">giving</p>
+            <h2>Offerings &amp; Tithes</h2>
+          </div>
+
+          <div className="giving-flyer">
+            <div className="giving-row">
+              <span>MPESA Paybill</span>
+              <strong>222111</strong>
+            </div>
+            <div className="giving-row">
+              <span>Account Number</span>
+              <strong>1891209</strong>
+            </div>
+            <p className="giving-note">Thank you for your generosity and faithful support to the work of God.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function App() {
   const [isDark, setIsDark] = useState(() => window.matchMedia('(prefers-color-scheme: dark)').matches);
 
@@ -362,6 +405,8 @@ function App() {
             <a href="#leaders">Leaders</a>
             <a href="#districts">Districts</a>
             <a href="#groups">Groups</a>
+            <a href="#location">Location</a>
+            <a href="#giving">Giving</a>
           </div>
           <button type="button" className="theme-toggle" onClick={() => setIsDark((v) => !v)}>
             {isDark ? 'Light mode' : 'Dark mode'}
@@ -441,6 +486,7 @@ function App() {
           </div>
         </section>
 
+        <ChurchLocation />
         <Districts />
         <Ministries />
       </main>
